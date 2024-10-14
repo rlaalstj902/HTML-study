@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>피치랩 로그인</title>
+    <link rel="icon" type="image/x-icon" href="../assets/title.png" />
+    <link href="../css/join.css" rel="stylesheet" />
+    <!--우편번호 API-->
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script>
+        function sample6_execDaumPostcode() {
+            new daum.Postcode({
+                oncomplete: function(data) {
+                    document.getElementById('addr1').value = data.zonecode;
+                    document.getElementById('addr2').value = data.roadAddress;
+                    document.getElementById('addr3').value = '';
+                }
+            }).open();
+        }
+    </script>
+
+</head>
+<body>
+
+<!--로고 위치-->
+<div id="logo">
+    <a href="index.html">
+        <img src="../assets/logo.png" alt="로고">
+    </a>
+</div>
+
+<!--회원가입 폼-->
+<div class="signUp">
+    <form id="f">
+        <div class="first">
+            <div class="main">회원가입</div>
+            <div class="ment">회원이 되어 멋진 발표를 준비해보세요!</div>
+        </div>
+
+        <div class="intro">아이디
+            <span class="star">*</span>
+            <div class="input">
+                <input name="userId" id="userId" type="text" placeholder="아이디 입력(6-20자)">
+                <button class="check" id="chkId"><b>중복 확인</b></button>
+            </div>
+        </div>
+
+        <div class="intro">비밀번호
+            <span class="star">*</span>
+            <div class="input">
+                <input name="password" id="password" type="password" placeholder="비밀번호 입력(문자,숫자,특수문자 포함 8-20자)">
+            </div>
+        </div>
+
+        <div class="intro">비밀번호 확인
+            <span class="star">*</span>
+            <div class="input">
+                <input name="password" id="password2" type="password" placeholder="비밀번호 재입력">
+            </div>
+        </div>
+
+        <div class="intro">이름
+            <span class="star">*</span>
+            <div class="input"><input name="userName" id="userName" type="text" placeholder="이름을 입력해주세요">
+            </div>
+        </div>
+
+        <div class="intro">이메일
+            <span class="star">*</span>
+            <div class="input"><input name="email1" id="email1" type="text" placeholder="example@gmail.com">
+                <button class="check" id="chkEmail"><b>인증하기</b></button>
+            </div>
+            <div class="input"><input name="email2" id="email2" type="text" placeholder="인증번호 6자리를 입력해주세요">
+            </div>
+        </div>
+
+        <div class="intro">주소
+            <span class="star">*</span>
+            <div class="input">
+                <input name="addr1" id="addr1" type="text" placeholder="우편번호" readonly>
+                <button class="check" onclick="sample6_execDaumPostcode()" type="button" id="chkAddr"><b>우편번호 찾기</b></button>
+            </div>
+            <div class="input"><input name="addr2" id="addr2" type="text" placeholder="도로명 주소" readonly></div>
+            <div class="input"><input name="addr3" id="addr3" type="text" placeholder="상세 주소"></div>
+        </div>
+    </form>
+
+    <div class="reg">
+        <a href="index.html"><button class="signUpping">가입하기</button></a>
+    </div>
+</div>
+</body>
+</html>
