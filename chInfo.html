@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>피치랩 로그인</title>
+    <link rel="icon" type="image/x-icon" href="../assets/title.png"/>
+    <link href="../css/chInfo.css" rel="stylesheet" />
+
+    <script src="../js/chInfo.js"></script>
+
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+</head>
+<body>
+<div class="chPw">
+    <form id="f">
+        <div class="mainIntro">
+            <div class="main">개인정보 관리</div>
+        </div>
+
+        <div class="name">
+            <div class="intro">이름</div>
+            <div class="content">이지원
+                <button class="check" id="chkId">변경</button>
+            </div>
+            <div class="description">* 개인 정보에 따른 이름 변경이 가능합니다.</div>
+        </div>
+
+        <div class="id">
+            <div class="intro">휴대전화 번호</div>
+            <div class="content">010-2507-7380
+                <button class="check" id="chkPhone">변경</button>
+            </div>
+        </div>
+        <div class="description">* 본인 인증된 번호만 변경이 가능합니다.</div>
+
+        <div>
+            <div class="intro">아이디(수정불가)</div>
+            <div class="id-content">jjw7380</div>
+        </div>
+
+        <div class="gender">
+            <div class="intro">성별</div>
+            <div class="gender-selection">
+                <button type="button" class="gender-btn" id="male" onclick="selectGender(this)">남성</button>
+                <button type="button" class="gender-btn" id="female" onclick="selectGender(this)">여성</button>
+                <button type="button" class="gender-btn" id="other" onclick="selectGender(this)">선택 안함</button>
+            </div>
+        </div>
+
+        <div class="addr">
+            <div class="intro">주소</div>
+            <div class="adinput">
+                <input name="addr1" id="addr1" type="text" placeholder="주소를 입력해주세요" readonly>
+                <button class="adcheck" onclick="sample6_execDaumPostcode(event)" id="chkAddr">주소검색</button>
+            </div>
+            <div class="input">
+                <input name="addr2" id="addr2" type="text" placeholder="상세 주소를 입력해주세요">
+            </div>
+        </div>
+
+        <div class="email">
+            <div class="intro">이메일</div>
+            <div class="input">
+                <input name="email" id="email" type="text" placeholder="이메일 주소를 입력해주세요">
+            </div>
+        </div>
+
+        <div class="outtro">
+            <div class="back">
+                <a href="mypage.html">
+                    <button id="button" type="button" class="back-btn">돌아가기</button>
+                </a>
+            </div>
+            <div class="delete">
+                <a href="delete.html" class="text-link">
+                    <button type="button" class="delete-btn">회원탈퇴</button>
+                </a>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
